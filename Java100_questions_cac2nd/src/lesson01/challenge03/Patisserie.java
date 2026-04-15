@@ -22,5 +22,19 @@
 package lesson01.challenge03;
 
 public class Patisserie {
+	public static void main(String[] args) {
+		System.out.println("たいへんお待たせいたしました。");
+		System.out.println("【ポエール・ネルメ】");
+		System.out.println("ただいまより開店です！！");
+		System.out.println("\n本日のおすすめ商品です。\n");
+
+		int syutoronn = 30;
+		int syokora = 30;
+		int pisutasyu = 30;
+
+		System.out.println("シトロン　　　\\250・・・残り" + syutoronn);
+		System.out.println("ショコラ　　　\\280・・・残り" + syokora);
+		System.out.println("ピスターシュ　\\320・・・残り" + pisutasyu);
+	}
 
 }
