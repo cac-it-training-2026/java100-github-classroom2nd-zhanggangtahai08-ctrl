@@ -83,9 +83,45 @@ public class Explorer {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-
 		//ここにwhile文、if文を利用した処理を記述
+		while (i < 3) {
 
+			System.out.print("隊長：\r\nどの手を出して通り抜けますか\r\n（グー… 1 : チョキ… 2 : パー… 3）＞");
+			String handString = br.readLine();
+			hand = Integer.parseInt(handString);
+			alligator = (int) (Math.random() * 10 % 3) + 1;
+			if (hand == 1) {
+				if (alligator == 1 || alligator == 2) {
+					System.out.println("隊長：\r\n相手はグーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+				} else {
+					System.out.println("隊長：\r\n相手はパーワニでした。");
+					break;
+				}
+
+			} else if (hand == 2) {
+				if (alligator == 2 || alligator == 3) {
+					System.out.println("隊長：\r\n相手はチョキワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+				} else {
+					System.out.println("隊長：\r\n相手はグーワニでした。");
+					break;
+				}
+
+			} else if (hand == 3) {
+				if (alligator == 3 || alligator == 1) {
+					System.out.println("隊長：\r\n相手はパーワニでした。");
+					System.out.println((i + 1) + "匹目通り抜け成功！");
+				} else {
+					System.out.println("隊長：\r\n相手はチョキワニでした。");
+					break;
+				}
+			} else {
+				System.out.println("隊長：\r\nそんな手はありませんよ。もう一度入れてください。");
+				i--;
+			}
+			i++;
+		}
 
 		if (i == 3) {
 			System.out.println("隊長：");
