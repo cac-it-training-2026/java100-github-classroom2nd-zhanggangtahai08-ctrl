@@ -89,18 +89,17 @@ public class WarehouseManager {
 		System.out.println("いらっしゃいませ、本日はString型のみの販売になります。\n");
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		System.out.print("要素数を入れてください＞");
+		String roopString = br.readLine();//ここに入力処理を記述する
+		int roop = Integer.parseInt(roopString);
+		String[] str = new String[roop];//ここに配列宣言を記述する
 
+		for (int i = 0; i < str.length; i++) {//ここに値の入力+代入処理を記述する（for文）
 
-		//ここに入力処理を記述する
+			System.out.print("代入する値を入れてください＞");
+			str[i] = br.readLine();
 
-
-		//ここに配列宣言を記述する
-
-
-		//ここに値の入力+代入処理を記述する（for文）
-
+		}
 
 		System.out.println("\nYさん：");
 		System.out.println("...出来ました。\n");
@@ -110,13 +109,15 @@ public class WarehouseManager {
 
 		System.out.println("Yさん：");
 
-
 		//ここに配列の値の出力処理を記述する（for文）
+		for (int i = 0; i < str.length; i++) {
+			System.out.print(str[i] + ",");
 
-
+		}
 		System.out.println("です。\n");
 
 		System.out.println("Z先輩：");
 		System.out.println("はい、ありがとう。ちゃんと出来てますね。\n");
 	}
+
 }
