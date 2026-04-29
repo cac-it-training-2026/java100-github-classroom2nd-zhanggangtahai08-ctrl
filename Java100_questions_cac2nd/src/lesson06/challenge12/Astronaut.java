@@ -32,30 +32,89 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 //ここにOmegalianクラスを記述する
 
+class Omegalian {
+	private String item;
+
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		int IndexNum = item.length() - 1;
+		char lastChar = item.charAt(IndexNum);
+		String chaneString = changeLastChar(lastChar);
+
+		if (chaneString != null) {
+			StringBuffer sb = new StringBuffer(item);
+			sb.replace(IndexNum, IndexNum + 1, chaneString);
+			this.item = new String(sb);
+
+		} else {
+			this.item = item;
+		}
+
+	}
+
+	private String changeLastChar(char ch) {
+		String lastCher = null;
+		switch (ch) {
+		case '0':
+			lastCher = "zero";
+			break;
+		case '1':
+			lastCher = "one";
+			break;
+		case '2':
+			lastCher = "two";
+			break;
+		case '3':
+			lastCher = "three";
+			break;
+		case '4':
+			lastCher = "four";
+			break;
+		case '5':
+			lastCher = "five";
+			break;
+		case '6':
+			lastCher = "six";
+			break;
+		case '7':
+			lastCher = "seven";
+			break;
+		case '8':
+			lastCher = "eight";
+			break;
+		case '9':
+			lastCher = "nine";
+			break;
+		}
+		return lastCher;
+
+	}
+}
 
 public class Astronaut {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.print("Ω星人にアイテムを渡してください＞");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String present = br.readLine();
+		System.out.print("Ω星人にアイテムを渡してください＞");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String present = br.readLine();
 
+		//ここに適切な処理を記述する
+		Omegalian omegalian = new Omegalian();
+		omegalian.setItem(present);
 
-        //ここに適切な処理を記述する
+		String item = null;
 
+		//ここに適切な処理を記述する
+		item = omegalian.getItem();
 
-        String item = null;
-
-
-        //ここに適切な処理を記述する
-
-
-        System.out.println("\nΩ星人：");
-        System.out.println("えっ！" + item + "をくれるオメガか！");
-        System.out.println("ありがとうオメガ。");
-    }
+		System.out.println("\nΩ星人：");
+		System.out.println("えっ！" + item + "をくれるオメガか！");
+		System.out.println("ありがとうオメガ。");
+	}
 }
