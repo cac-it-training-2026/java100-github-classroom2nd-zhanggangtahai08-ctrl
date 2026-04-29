@@ -66,12 +66,28 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
+		int[] BoxC = new int[5];
+		int[] BoxD = new int[5];
+		int[] BoxE = new int[5];
+		int[][] AllBox = new int[3][5];
 
+		AllBox[0] = BoxC;
+		AllBox[1] = BoxD;
+		AllBox[2] = BoxE;
+
+		for (int i = 0; i < AllBox.length; i++) {
+			for (int j = 0; j < AllBox[0].length; j++) {
+				int intputIndexNum = (int) (Math.random() * 10) % 4;
+				if (intputIndexNum == 0) {
+					AllBox[i][j] = 0;
+				} else {
+					AllBox[i][j] = (int) (Math.random() * 10) % 10 + 1;
+				}
+			}
+		}
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送の件、お願いします。\n");
@@ -81,48 +97,87 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxC.length; i++) {
+			System.out.print(BoxC[i] + ",");
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxD.length; i++) {
+			System.out.print(BoxD[i] + ",");
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxE.length; i++) {
+			System.out.print(BoxE[i] + ",");
+		}
 
 		System.out.println("\n\nでした。直してきます...\n");
 
+		int[] Array = new int[15];
+
+		for (int i = 0; i < Array.length; i++) {
+			Array[i] = -1;
+		}
+
+		int k = 0;
+		for (int i = 0; i < AllBox.length; i++) {
+			for (int j = 0; j < AllBox[0].length; j++) {
+				if (AllBox[i][j] == 0) {
+					continue;
+				} else {
+					Array[k] = AllBox[i][j];
+					AllBox[i][j] = 0;
+					k++;
+				}
+			}
+		}
+		k = 0;
+		boolean roopFlag = true;
+		for (int i = 0; i < AllBox.length; i++) {
+			for (int j = 0; j < AllBox[0].length; j++) {
+				AllBox[i][j] = Array[k];//AllBoxにArrayに入れた要素を順番に入れていく
+				k++;
+				if (Array[k] == -1) {
+					roopFlag = false;
+					break;
+				}
+			}
+			if (roopFlag == false) {
+				break;
+			}
+
+		}
 
 		//ここに詰め替え処理を記述する
-
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxC.length; i++) {
+			System.out.print(BoxC[i] + ",");
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxD.length; i++) {
+			System.out.print(BoxD[i] + ",");
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < BoxE.length; i++) {
+			System.out.print(BoxE[i] + ",");
+		}
 
 		System.out.println("\n\nになりました。\n");
 

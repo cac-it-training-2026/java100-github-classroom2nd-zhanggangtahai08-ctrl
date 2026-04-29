@@ -61,12 +61,55 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
+		//intputNum = (int) (Math.random() * 10 % 4 + 1);
 
+		int[] BoxC = new int[5];
+		int[] BoxD = new int[5];
+		int[] BoxE = new int[5];
+		int[][] AllBox = new int[3][5];
+
+		AllBox[0] = BoxC;
+		AllBox[1] = BoxD;
+		AllBox[2] = BoxE;
+
+		for (int i = 0; i < AllBox.length; i++) {
+			for (int j = 0; j < AllBox[0].length; j++) {
+				int intputIndexNum = (int) (Math.random() * 10) % 4;
+				if (intputIndexNum == 0) {
+					AllBox[i][j] = 0;
+				} else {
+					AllBox[i][j] = (int) (Math.random() * 10 % 10 + 1);
+				}
+			}
+		}
+
+		//		for (int i = 0; i < BoxC.length; i++) {
+		//			int intputIndexNum = (int) (Math.random() * 10 % 4 + 1);
+		//			if (intputIndexNum == 4) {
+		//				BoxC[i] = 0;
+		//			} else {
+		//				BoxC[i] = (int) (Math.random() * 10 % 10 + 1);
+		//			}
+		//		}
+		//		for (int i = 0; i < BoxD.length; i++) {
+		//			int intputIndexNum = (int) (Math.random() * 10 % 4 + 1);
+		//			if (intputIndexNum == 4) {
+		//				BoxD[i] = 0;
+		//			} else {
+		//				BoxD[i] = (int) (Math.random() * 10 % 10 + 1);
+		//			}
+		//		}
+		//		for (int i = 0; i < BoxE.length; i++) {
+		//			int intputIndexNum = (int) (Math.random() * 10 % 4 + 1);
+		//			if (intputIndexNum == 4) {
+		//				BoxE[i] = 0;
+		//			} else {
+		//				BoxE[i] = (int) (Math.random() * 10 % 10 + 1);
+		//			}
+		//		}
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
-
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送から預かった荷物の確認をお願いします。\n");
@@ -76,21 +119,25 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
+		for (int i : BoxC) {
+			System.out.print(i + ",");
+		}
 
 		//ここに配列Cの要素をすべて出力する処理を記述する。
 
-
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i : BoxD) {
+			System.out.print(i + ",");
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i : BoxE) {
+			System.out.print(i + ",");
+		}
 
 		System.out.println("\n\nです。\n");
 
